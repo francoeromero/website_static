@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantilla comercial</title>
+    <!-- AOS animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* CONFIG GLOBAL */
         *{
@@ -141,10 +143,10 @@
 
         .thumb{
             position: absolute;
-            left: 50%;
             bottom: 20px;
-            transform: translateX(-50%);
             display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .thumb li {
@@ -182,7 +184,7 @@
                 transform: translateX(-100%);
             }
             100%{
-                transform: translateX(0%); 
+                transform: translateX(0%);
             }
         }
 
@@ -229,6 +231,10 @@
 
 
         @media (max-width: 991px){
+            #home{
+                height: 100vh;
+                overflow-y: hidden;
+            }
             bg::before{
                 display: none;
             }
@@ -253,6 +259,7 @@
             }
             .content .textBox h2{
                 font-size: 2em;
+                z-index: 2;
             }
             .content .imgBox{
                 max-width: 100%;
@@ -261,10 +268,15 @@
             .content .imgBox img{
                 margin-top: 150px;
                 max-width: 150px;
+                z-index: 9;
             }
-            .thumb li {
-                margin: 0px 3px;
+            .thumb{
+                height: 10rem;
+                margin-bottom: -2rem;
+                z-index: 9;
             }
+            /* .thumb li {
+            } */
             .thumb li::before{
                 position: absolute;
                 top: -150px;
@@ -272,7 +284,7 @@
                 font-size: 6em;
             }
             .textBote{
-                font-size: 12em;
+                font-size: 15em;
                 margin-left: 5.5rem;
             }
             .sci {
@@ -285,24 +297,36 @@
             header .navigation{
                 display: none;
             }
+            @keyframes aparece {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+            }
             header .navigation.active {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background: rgba(34, 34, 34, 0.6); /* Fondo semi-transparente */
-            backdrop-filter: blur(5px); /* Efecto de desenfoque */
-            z-index: 10;
+            backdrop-filter: blur(10px); /* Efecto de desenfoque */
+            z-index: 999;
             transition: 1s;
             flex-direction: column;
-        }
-        header .navigation li{
-            margin-bottom: 20px;
-        }
+            animation: aparece 1s ;
+            }
+            header .navigation li{
+                margin-bottom: 20px;
+            }
+            .sci{
+                z-index: 5;
+            }
             .toggle{
                 position: absolute;
                 right: 0;
@@ -338,7 +362,7 @@
     </style>
 </head>
 <body>
-    <section>
+    <section id="home" class="home">
         <div class="bg"></div>
         <header>
             <a href="#" class="logo">OPTIMUS STIGMATA</a>
@@ -352,33 +376,33 @@
         </header>
         <div class="content">
             <div class="textBox">
-                <h2>Distribuidora Tattoo</h2>
-                <p>Nuestro servicio de envío está diseñado para ser rápido y confiable, asegurando que los tatuadores tengan acceso inmediato a la tinta que necesitan para llevar a cabo sus proyectos sin demoras innecesarias.</p>
-                <a href="#">Contáctanos</a>
+                <h2 data-aos="fade-down" data-aos-duration="2000">Distribuidora Tattoo</h2>
+                <p data-aos="fade-left" data-aos-duration="2000">Nuestro servicio de envío está diseñado para ser rápido y confiable, asegurando que los tatuadores tengan acceso inmediato a la tinta que necesitan para llevar a cabo sus proyectos sin demoras innecesarias.</p>
+                <a data-aos="fade-right" data-aos-duration="3000" href="#">Contáctanos</a>
             </div>
-            <div class="imgBox">
+            <div class="imgBox" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="3000">
                 <img src="./img/bote_rojo_grande.png" alt="" class="bote first">
             </div>
         </div>
 
-        <ul class="thumb">
-            <li data-text="Rojo">
+        <ul class="thumb"data-aos="fade-up" data-aos-duration="2000">
+            <li data-text="Rojo" >
                 <img src="./img/bote_rojo.png" onclick="imgSlider('./img/bote_rojo_grande.png'); changeBgColor('#a02931')">
                 <h2 class="textBote" data-color="0">ROJO</h2>
             </li>
-            <li data-text="Azul">
+            <li data-text="Azul" >
                 <img src="./img/bote_azul.png" onclick="imgSlider('./img/bote_azul_grande.png'); changeBgColor('#001f3f')">
                 <h2 class="textBote" data-color="1">AZUL</h2>
             </li>
-            <li data-text="Negro">
+            <li data-text="Negro" >
                 <img src="./img/bote_negro.png" onclick="imgSlider('./img/bote_negro_grande.png'); changeBgColor('#1a1a1a')">
                 <h2 class="textBote" data-color="2">NEGRO</h2>
             </li>
-            <li data-text="Amarillo">
+            <li data-text="Amarillo" >
                 <img src="./img/bote_amarillo.png" onclick="imgSlider('./img/bote_amarillo_grande.png'); changeBgColor('#b58900')">
                 <h2 class="textBote" data-color="3">AMARILLO</h2>
             </li>
-            <li data-text="Verde">
+            <li data-text="Verde" >
                 <img src="./img/bote_verde.png" onclick="imgSlider('./img/bote_verde_grande.png'); changeBgColor('#004d00')">
                 <h2 class="textBote" data-color="4">VERDE</h2>
             </li>
@@ -403,6 +427,28 @@
         </ul>
     </section>
 
+    <section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+
+    </section>
+    <!-- AOS animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Fin AOS animation -->
     <script>
 
 let menuToggle = document.querySelector('.toggle');
@@ -496,7 +542,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Mostrar el texto correspondiente al color del elemento clicado
             let textBote = document.querySelector(`.textBote[data-color="${index}"]`);
             if (textBote) {
-                textBote.style.opacity = 1;
+                textBote.style.opacity = 0.6;
                 textBote.style.animation = 'movimiento 1s';
                 
                 // Establecer un temporizador para volver a ocultar el texto después de 3 segundos
@@ -515,4 +561,3 @@ document.addEventListener('DOMContentLoaded', function () {
     </script>
 </body>
 </html>
-
