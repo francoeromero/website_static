@@ -164,17 +164,27 @@
 
         .textBote{
             position: absolute;
-            top: -200px;
-            left: -100px;
+            top: -300px;
+            left: -200px;
             content: attr(data-text);
             white-space: nowrap;
-            font-size: 8em;
+            font-size: 18em;
             color: rgba(255, 255, 255, 0.05);
             opacity: 0;
             font-weight: 700;
             pointer-events: none;
             transition: opacity 0.5s;
         }
+
+        @keyframes movimiento{
+            0%{
+                transform: translateX(-100%);
+            }
+            100%{
+                transform: translateX(0%); 
+            }
+        }
+
         /* .thumb li::before{
             position: absolute;
             top: -200px;
@@ -478,11 +488,12 @@ document.addEventListener('DOMContentLoaded', function () {
             let textBote = document.querySelector(`.textBote[data-color="${index}"]`);
             if (textBote) {
                 textBote.style.opacity = 1;
-
+                textBote.style.animation = 'movimiento 1s';
+                
                 // Establecer un temporizador para volver a ocultar el texto después de 3 segundos
                 setTimeout(function () {
                     textBote.style.opacity = 0;
-                    // textBote.style.transition = '1s';
+                    textBote.style.animation = 'none';
                 }, 1000);
             }
         });
