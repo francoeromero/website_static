@@ -161,6 +161,20 @@
         .thumb li.active{
             border: 2px solid rgba(255,255,255,1);
         }
+
+        .textBote{
+            position: absolute;
+            top: -200px;
+            left: -100px;
+            content: attr(data-text);
+            white-space: nowrap;
+            font-size: 8em;
+            color: rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            font-weight: 700;
+            pointer-events: none;
+            transition: opacity 0.5s;
+        }
         /* .thumb li::before{
             position: absolute;
             top: -200px;
@@ -331,18 +345,23 @@
         <ul class="thumb">
             <li data-text="Rojo">
                 <img src="./img/bote_rojo.png" onclick="imgSlider('./img/bote_rojo_grande.png'); changeBgColor('#a02931')">
+                <h2 class="textBote" data-color="0">ROJO</h2>
             </li>
             <li data-text="Azul">
                 <img src="./img/bote_azul.png" onclick="imgSlider('./img/bote_azul_grande.png'); changeBgColor('#001f3f')">
+                <h2 class="textBote" data-color="1">AZUL</h2>
             </li>
             <li data-text="Negro">
                 <img src="./img/bote_negro.png" onclick="imgSlider('./img/bote_negro_grande.png'); changeBgColor('#1a1a1a')">
+                <h2 class="textBote" data-color="2">NEGRO</h2>
             </li>
             <li data-text="Amarillo">
                 <img src="./img/bote_amarillo.png" onclick="imgSlider('./img/bote_amarillo_grande.png'); changeBgColor('#b58900')">
+                <h2 class="textBote" data-color="3">AMARILLO</h2>
             </li>
             <li data-text="Verde">
                 <img src="./img/bote_verde.png" onclick="imgSlider('./img/bote_verde_grande.png'); changeBgColor('#004d00')">
+                <h2 class="textBote" data-color="4">VERDE</h2>
             </li>
             
         </ul>
@@ -440,6 +459,35 @@ setInterval(function () {
     // Incrementar el índice para el próximo color
     indiceColor = (indiceColor + 1) % colores.length;
 }, 3000);
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    let thumbItems = document.querySelectorAll('.thumb li');
+
+    thumbItems.forEach(function (item, index) {
+        item.addEventListener('click', function () {
+            // Ocultar todos los textos
+            document.querySelectorAll('.textBote').forEach(function (text) {
+                text.style.opacity = 0;
+            });
+
+            // Mostrar el texto correspondiente al color del elemento clicado
+            let textBote = document.querySelector(`.textBote[data-color="${index}"]`);
+            if (textBote) {
+                textBote.style.opacity = 1;
+
+                // Establecer un temporizador para volver a ocultar el texto después de 3 segundos
+                setTimeout(function () {
+                    textBote.style.opacity = 0;
+                    // textBote.style.transition = '1s';
+                }, 1000);
+            }
+        });
+    });
+});
 
 
 
