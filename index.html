@@ -15,7 +15,7 @@
             font-family: sans-serif;
         }
         :root{
-            --color-primario: #a02931;
+            --color-primario: #7d1d26;
         }
 
         /* Section 1 */
@@ -44,7 +44,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: url(./img/background_shadow.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         /* NAVBAR */
         header{
@@ -237,6 +240,7 @@
             }
             bg::before{
                 display: none;
+                background: url(./img/background_movil.png);
             }
             header{
                 padding: 20px;
@@ -380,18 +384,21 @@
                 <p data-aos="fade-left" data-aos-duration="2000">Nuestro servicio de envío está diseñado para ser rápido y confiable, asegurando que los tatuadores tengan acceso inmediato a la tinta que necesitan para llevar a cabo sus proyectos sin demoras innecesarias.</p>
                 <a data-aos="fade-right" data-aos-duration="3000" href="#">Contáctanos</a>
             </div>
-            <div class="imgBox" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="3000">
+            <div class="imgBox" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2000">
                 <img src="./img/bote_rojo_grande.png" alt="" class="bote first">
             </div>
         </div>
 
         <ul class="thumb"data-aos="fade-up" data-aos-duration="2000">
+            
+            <img src="./img/rama2.png" width="100" alt="">
+            
             <li data-text="Rojo" >
-                <img src="./img/bote_rojo.png" onclick="imgSlider('./img/bote_rojo_grande.png'); changeBgColor('#a02931')">
+                <img src="./img/bote_rojo.png" onclick="imgSlider('./img/bote_rojo_grande.png'); changeBgColor('#7d1d26')">
                 <h2 class="textBote" data-color="0">ROJO</h2>
             </li>
             <li data-text="Azul" >
-                <img src="./img/bote_azul.png" onclick="imgSlider('./img/bote_azul_grande.png'); changeBgColor('#001f3f')">
+                <img src="./img/bote_azul.png" onclick="imgSlider('./img/bote_azul_grande.png'); changeBgColor('#00162b')">
                 <h2 class="textBote" data-color="1">AZUL</h2>
             </li>
             <li data-text="Negro" >
@@ -399,13 +406,15 @@
                 <h2 class="textBote" data-color="2">NEGRO</h2>
             </li>
             <li data-text="Amarillo" >
-                <img src="./img/bote_amarillo.png" onclick="imgSlider('./img/bote_amarillo_grande.png'); changeBgColor('#b58900')">
+                <img src="./img/bote_amarillo.png" onclick="imgSlider('./img/bote_amarillo_grande.png'); changeBgColor('#8e7000')">
                 <h2 class="textBote" data-color="3">AMARILLO</h2>
             </li>
             <li data-text="Verde" >
-                <img src="./img/bote_verde.png" onclick="imgSlider('./img/bote_verde_grande.png'); changeBgColor('#004d00')">
+                <img src="./img/bote_verde.png" onclick="imgSlider('./img/bote_verde_grande.png'); changeBgColor('#003a00')">
                 <h2 class="textBote" data-color="4">VERDE</h2>
             </li>
+                <img src="./img/rama1.png" width="100"  alt="">
+          
             
         </ul>
         <ul class="sci">
@@ -489,19 +498,19 @@ let menuToggle = document.querySelector('.toggle');
 
 // Mapeo de colores a texto
     const coloresTexto = {
-    '#a02931': 'Rojo',
-    '#001f3f': 'Azul',
+    '#7d1d26': 'Rojo',
+    '#00162b': 'Azul',
     '#1a1a1a': 'Negro',
-    '#b58900': 'Amarillo',
-    '#004d00': 'Verde'
+    '#8e7000': 'Amarillo',
+    '#003a00': 'Verde'
 };
 
 const coloresImagenes = {
-    '#a02931': './img/bote_rojo_grande.png',
-    '#001f3f': './img/bote_azul_grande.png',
+    '#7d1d26': './img/bote_rojo_grande.png',
+    '#00162b': './img/bote_azul_grande.png',
     '#1a1a1a': './img/bote_negro_grande.png',
-    '#b58900': './img/bote_amarillo_grande.png',
-    '#004d00': './img/bote_verde_grande.png'
+    '#8e7000': './img/bote_amarillo_grande.png',
+    '#003a00': './img/bote_verde_grande.png'
 };
 
 let indiceColor = 0;
