@@ -363,6 +363,16 @@
             scale: 3;
             margin-right: 150px;
         }
+
+        header.scroll {
+            background: #333;
+            position: fixed;
+            transform: scale(1.05);
+            height: 4rem;
+            transition: background 0.5s, transform 0.5s, height 0.5s;
+            z-index: 9999;
+            transition: 1s;
+        }
     </style>
 </head>
 <body>
@@ -414,7 +424,7 @@
                 <h2 class="textBote" data-color="4">VERDE</h2>
             </li>
                 <img src="./img/rama1.png" width="100"  alt="">
-          
+
             
         </ul>
         <ul class="sci">
@@ -564,7 +574,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
+window.addEventListener("scroll", function () {
+            var header = document.querySelector('header');
+            header.classList.toggle('scroll', window.scrollY > 0);
+        });
 
 
     </script>
