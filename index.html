@@ -651,15 +651,16 @@ $(document).ready(function() {
   });
 
 
-  let prueba = document.querySelector('.content');
-let prueba2 = document.querySelector('.thumb');
-let contenidoOriginal = prueba.innerHTML;
-let contenidoOriginal2 = prueba2.innerHTML;
+// para cargar de nuevo el home y se active el AOS animation 
+let content = document.querySelector('.content');
+let thumb = document.querySelector('.thumb');
+let contenidoOriginal = content.innerHTML;
+let contenidoOriginal2 = thumb.innerHTML;
 
 // Para restaurar el contenido original en otro lugar del código
 function restaurarContenidoOriginal() {
-    prueba.innerHTML = contenidoOriginal;
-    prueba2.innerHTML = contenidoOriginal2;
+    content.innerHTML = contenidoOriginal;
+    thumb.innerHTML = contenidoOriginal2;
 }
 
 window.addEventListener("scroll", function () {
@@ -669,8 +670,8 @@ window.addEventListener("scroll", function () {
     // Verificar si el scroll ha llegado a la parte superior de la página
     if (window.scrollY === 0) {
         // Recargar solo el elemento específico
-        prueba.innerHTML = ''; // Limpiar el contenido
-        prueba2.innerHTML = '';
+        content.innerHTML = ''; // Limpiar el contenido
+        thumb.innerHTML = '';
         
         // Simular la recarga del contenido después de un tiempo suficiente
         setTimeout(function () {
