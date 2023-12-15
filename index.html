@@ -634,6 +634,19 @@ $(document).ready(function() {
 
 
 
+  document.addEventListener('DOMContentLoaded', function () {
+    let navigation = document.querySelector('.navigation');
+
+    // Añade un evento de clic a cada elemento li en dispositivos móviles
+    document.querySelectorAll('.navigation li').forEach(function (li) {
+      li.addEventListener('click', function () {
+        // Elimina la clase 'active' de la navegación
+        navigation.classList.remove('active');
+      });
+    });
+  });
+
+
     </script>
 </body>
 </html>
