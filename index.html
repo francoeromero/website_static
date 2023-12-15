@@ -92,6 +92,15 @@
             color: #333;
             transition: .5s;
         }
+        header.scroll {
+            background: #333;
+            position: fixed;
+            transform: scale(1.05);
+            height: 4rem;
+            transition: background 0.5s, transform 0.5s, height 0.5s;
+            z-index: 9999;
+            transition: 1s;
+        }
 
         /* Contendor titulo, texto e img */
         .content{
@@ -364,15 +373,6 @@
             margin-right: 150px;
         }
 
-        header.scroll {
-            background: #333;
-            position: fixed;
-            transform: scale(1.05);
-            height: 4rem;
-            transition: background 0.5s, transform 0.5s, height 0.5s;
-            z-index: 9999;
-            transition: 1s;
-        }
     </style>
 </head>
 <body>
@@ -382,10 +382,10 @@
             <a href="#" class="logo">OPTIMUS STIGMATA</a>
             <div class="toggle"></div>
             <ul class="navigation">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Quienes somos</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#quienesSomos">Quienes somos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </header>
         <div class="content">
@@ -446,7 +446,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="quienesSomos" class="quienesSomos" style="height: 100vh; background: green;">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
@@ -462,8 +462,45 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
 
     </section>
+    <section id="servicios" class="servicios" style="height: 100vh; background: rgb(19, 0, 128);">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+
+    </section>
+    <section id="contacto" class="contacto" style="height: 100vh; background: rgb(124, 0, 128);">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+
+    </section>
+
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- AOS animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
         AOS.init();
     </script>
@@ -574,10 +611,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Cambiar las caracteristicas del header
 window.addEventListener("scroll", function () {
             var header = document.querySelector('header');
             header.classList.toggle('scroll', window.scrollY > 0);
         });
+// scroll jquery
+$(document).ready(function() {
+    // Función para manejar el clic en los enlaces del menú
+    $('header .navigation li a').on('click', function(e) {
+      e.preventDefault();
+
+      // Obtenemos el hash del enlace clicado
+      var targetSection = $(this).attr('href');
+
+      // Realizamos el desplazamiento suave
+      $('html, body').animate({
+        scrollTop: $(targetSection).offset().top
+      }, 1000); 
+    });
+});
+
 
 
     </script>
