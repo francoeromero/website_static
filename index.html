@@ -397,6 +397,8 @@
             <div class="imgBox" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2000">
                 <img src="./img/bote_rojo_grande.png" alt="" class="bote first">
             </div>
+
+
         </div>
 
         <ul class="thumb"data-aos="fade-up" data-aos-duration="2000">
@@ -447,7 +449,7 @@
     </section>
 
     <section id="quienesSomos" class="quienesSomos" style="height: 100vh; background: green;">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
+        <p  data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2000">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae numquam, mollitia illo suscipit consectetur placeat porro sapiente ratione cum magnam quas obcaecati accusamus qui soluta facere. Laboriosam ullam numquam accusantium!</p>
@@ -503,6 +505,7 @@
     
     <script>
         AOS.init();
+        
     </script>
     <!-- Fin AOS animation -->
     <script>
@@ -628,12 +631,13 @@ $(document).ready(function() {
       // Realizamos el desplazamiento suave
       $('html, body').animate({
         scrollTop: $(targetSection).offset().top
+        
       }, 1000); 
     });
 });
 
 
-
+// en responsive cada que se de click en el menu,  elimino la clase active, lo blureado
   document.addEventListener('DOMContentLoaded', function () {
     let navigation = document.querySelector('.navigation');
 
@@ -645,6 +649,36 @@ $(document).ready(function() {
       });
     });
   });
+
+
+  let prueba = document.querySelector('.content');
+let prueba2 = document.querySelector('.thumb');
+let contenidoOriginal = prueba.innerHTML;
+let contenidoOriginal2 = prueba2.innerHTML;
+
+// Para restaurar el contenido original en otro lugar del código
+function restaurarContenidoOriginal() {
+    prueba.innerHTML = contenidoOriginal;
+    prueba2.innerHTML = contenidoOriginal2;
+}
+
+window.addEventListener("scroll", function () {
+    var header = document.querySelector('header');
+    header.classList.toggle('scroll', window.scrollY > 0);
+
+    // Verificar si el scroll ha llegado a la parte superior de la página
+    if (window.scrollY === 0) {
+        // Recargar solo el elemento específico
+        prueba.innerHTML = ''; // Limpiar el contenido
+        prueba2.innerHTML = '';
+        
+        // Simular la recarga del contenido después de un tiempo suficiente
+        setTimeout(function () {
+            // Agrega aquí la lógica para volver a cargar el contenido
+            restaurarContenidoOriginal();
+        }, 100); // 200 milisegundos
+    }
+});
 
 
     </script>
