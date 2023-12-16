@@ -89,7 +89,7 @@ header.scroll {
     background: #333;
     position: fixed;
     transform: scale(1.05);
-    height: 3rem;
+    height: 4rem;
     transition: background 0.5s, transform 0.5s, height 0.5s;
     z-index: 9999;
     transition: 1s;
