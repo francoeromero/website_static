@@ -36,7 +36,7 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(/img/background_shadow.png);
+    background: url(../img/background_shadow.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -242,7 +242,7 @@ header.scroll {
     }
     bg::before{
         display: none;
-        background: url(./img/background_movil.png);
+        background: url(/img/background_shadow.png);
     }
     header{
         padding: 20px;
